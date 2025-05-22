@@ -1,10 +1,7 @@
 import { test, expect } from '@playwright/test'
 
-
 test.describe('/posts', () => {
-
     test('get post', async ({ request }) => {
-
         const response = await request.get('/posts/1')
 
         expect(response.status()).toBe(200)
@@ -15,7 +12,6 @@ test.describe('/posts', () => {
     })
 
     test('create post', async ({ request }) => {
-
         const response = await request.post('/posts', {
             data: {
                 title: 'test',
@@ -32,9 +28,7 @@ test.describe('/posts', () => {
         expect(data.userId).toBe(1)
     })
 
-
     test('update post', async ({ request }) => {
-
         const response = await request.put('/posts/1', {
             data: {
                 title: 'test upd',
@@ -52,7 +46,6 @@ test.describe('/posts', () => {
     })
 
     test('delete post', async ({ request }) => {
-
         const response = await request.delete('/posts/1')
 
         expect(response.status()).toBe(200)
@@ -60,6 +53,3 @@ test.describe('/posts', () => {
         expect(data).toEqual({})
     })
 })
-
-
-
