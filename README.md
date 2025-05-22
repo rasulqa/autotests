@@ -17,7 +17,7 @@
 
 2. Установите зависимости:
 
-npm install && npx playwright install
+```npm install && npx playwright install```
 
 ---
 
@@ -25,7 +25,7 @@ npm install && npx playwright install
 
 - Запустить все тесты (E2E + API):
 
-npm run test
+```npm run test```
 
 ---
 
