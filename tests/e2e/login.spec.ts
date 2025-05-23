@@ -9,12 +9,12 @@ test.describe('Login feature', async () => {
     })
 
     test('successful login', async ({ page }) => {
-        await loginPage.login('standard_user', 'secret_sauce')
+        await loginPage.login(process.env.LOGIN!, process.env.PASSWORD!)
         await expect(page.getByText('Swag Labs')).toBeVisible()
     })
 
     test('authorization with an incorrect password', async ({ page }) => {
-        await loginPage.login('standard_user', '*')
+        await loginPage.login(process.env.USERNAME!, '*')
         await expect(page.getByText('Epic sadface: Username and password do not match any user in this service')).toBeVisible()
     })
 
