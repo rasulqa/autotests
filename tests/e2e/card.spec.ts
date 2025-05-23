@@ -12,7 +12,7 @@ test.describe('Catd feature', async () => {
     })
 
     test('adding product to cart', async ({ page }) => {
-        await loginPage.login('standard_user', 'secret_sauce')
+        await loginPage.login(process.env.LOGIN!, process.env.PASSWORD!)
         await cardPage.addToCard()
 
         await page.waitForURL('https://www.saucedemo.com/cart.html')
